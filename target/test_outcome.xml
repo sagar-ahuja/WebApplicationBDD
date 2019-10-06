@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="31.669475">
+<testcase classname="How much a customer can borrow" name="Validating the message for $1 Living Expenses" time="31.669475">
+<system-out><![CDATA[Given the form is empty.....................................................passed
+When user enters amount as 1 in Living Expenses and leaving all other fields as 0.passed
+Then user clicks 'Work out how much I can borrow' button....................passed
+Then user should get the message as.........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
