@@ -1,4 +1,3 @@
-@Borrow
 Feature: How much a customer can borrow
 
 @FirstTest
@@ -12,7 +11,7 @@ Scenario: Borrowing estimate for a Single customer
 Scenario: Clearing the form
 	Given user has already calculated the borrowing capacity once
 	When user clicks the "start over" button
-	Then form get cleared to default values
+	Then form gets cleared to default values
 	
 @ThirdTest
 Scenario: Validating the message for $1 Living Expenses

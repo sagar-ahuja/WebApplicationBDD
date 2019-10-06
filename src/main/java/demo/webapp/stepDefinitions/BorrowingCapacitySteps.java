@@ -22,7 +22,7 @@ public class BorrowingCapacitySteps extends TestBase {
 	
 	@After
 	public void tearDown() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		TestBase.driver.quit();
 	}
 	
@@ -65,9 +65,9 @@ public class BorrowingCapacitySteps extends TestBase {
 		bcap.clickStartOverBtn();
 	}
 
-	@Then("^form get cleared to default values$")
-	public void form_get_cleared_to_default_values() {
-		
+	@Then("^form gets cleared to default values$")
+	public void form_gets_cleared_to_default_values() throws Exception {
+		bcap.checkDefaultValues();
 	}
 
 	@Given("^the form is empty$")

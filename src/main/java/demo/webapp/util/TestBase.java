@@ -3,10 +3,11 @@ package demo.webapp.util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
 	public static WebDriver driver;
@@ -33,9 +34,9 @@ public static void intitialisation()
 		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
-	else if(browserName.equalsIgnoreCase("Edge")) {
-		System.setProperty("webdriver.edge.driver", "resources\\msedgedriver.exe");
-		driver = new EdgeDriver();
+	else if(browserName.equalsIgnoreCase("Firefox")) {
+		System.setProperty("webdriver.edge.driver", "resources\\geckodriver.exe");
+		driver = new FirefoxDriver();
 	}
 	else {
 		System.out.println("Select a browser...");
@@ -46,6 +47,8 @@ public static void intitialisation()
 	driver.manage().deleteAllCookies();
 		
 	driver.get(prop.getProperty("url"));
+	
+	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		
 }
 

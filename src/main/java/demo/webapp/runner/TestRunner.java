@@ -13,8 +13,8 @@ import cucumber.api.junit.Cucumber;
 				 	plugin = {"pretty", "html:target/test_report", "json:target/output_file.json", "junit:target/test_outcome.xml"},
 				 	monochrome = true,
 				 	dryRun = false,
-				 	strict = true,
-				 	tags = {"~@SecondTest", "~@FirstTest", "@ThirdTest"}
+				 	strict = true
+				 	//tags = {"@FirstTest" , "@SecondTest", "~@ThirdTest"}
 		        )
 
 public class TestRunner {

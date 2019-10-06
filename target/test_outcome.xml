@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="31.669475">
-<testcase classname="How much a customer can borrow" name="Validating the message for $1 Living Expenses" time="31.669475">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="80.068745">
+<testcase classname="How much a customer can borrow" name="Borrowing estimate for a Single customer" time="32.882176">
+<system-out><![CDATA[Given user is already on the home loan borrow calculator page...............passed
+When user fills the form....................................................passed
+Then user clicks the "Work out how much I can borrow" button................passed
+Then user gets an estimate borrowing amount.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="How much a customer can borrow" name="Clearing the form" time="23.932838">
+<system-out><![CDATA[Given user has already calculated the borrowing capacity once...............passed
+When user clicks the "start over" button....................................passed
+Then form gets cleared to default values....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="How much a customer can borrow" name="Validating the message for $1 Living Expenses" time="23.253731">
 <system-out><![CDATA[Given the form is empty.....................................................passed
 When user enters amount as 1 in Living Expenses and leaving all other fields as 0.passed
 Then user clicks 'Work out how much I can borrow' button....................passed

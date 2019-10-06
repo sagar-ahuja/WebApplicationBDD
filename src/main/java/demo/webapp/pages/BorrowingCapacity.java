@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import demo.webapp.util.TestBase;
 
+
 public class BorrowingCapacity extends TestBase{
 	
 	/* declare the object repositories */
@@ -93,7 +94,7 @@ public class BorrowingCapacity extends TestBase{
 	public String validateBorrowingEstimate() throws InterruptedException {
 //		WebDriverWait wait = new WebDriverWait(driver, 20);
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class = 'borrow__result__text__amount']")));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String result = borrowResult.getText();
 		return result;		
 	}
@@ -121,6 +122,54 @@ public class BorrowingCapacity extends TestBase{
 		creditCardLimits_textbox.clear();
 		creditCardLimits_textbox.clear();
 		
+	}
+	
+	public void checkDefaultValues() throws Exception {
+		if(single_rb.isSelected())
+			System.out.println("Application Type value is defaulted to 'Single'");
+		else
+			throw new Exception();
+		
+		Select dep = new Select(dependants_dropdown);
+		if(dep.getFirstSelectedOption().isSelected())
+			System.out.println("Number of dependants value is defaulted to '0'");
+		else
+			throw new Exception();
+		
+		if(borrowHome_rb.isSelected())
+			System.out.println("Property you would like to buy value is defaulted to 'Home to live in'");
+		else
+			throw new Exception();
+		
+		if(livingExpenses_textbox.getAttribute("value").contentEquals("0"))
+			System.out.println("Living expenses value is defaulted to '0'");
+		else
+			throw new Exception();
+		
+		if(homeLoanRepayments_textbox.getAttribute("value").contentEquals("0"))
+			System.out.println("Current home loan repayments value is defaulted to '0'");
+		else
+			throw new Exception();
+		
+		if(otherLoanRepayments_textbox.getAttribute("value").contentEquals("0"))
+			System.out.println("Other loan repayments value is defaulted to '0'");
+		else
+			throw new Exception();
+		
+		if(otherCommitments_textbox.getAttribute("value").contentEquals("0"))
+			System.out.println("Other commitments value is defaulted to '0'");
+		else
+			throw new Exception();
+		
+		if(creditCardLimits_textbox.getAttribute("value").contentEquals("0"))
+			System.out.println("Total credit card limits value is defaulted to '0'");
+		else
+			throw new Exception();
+		
+		if(borrow_btn.isDisplayed())
+			System.out.println("'Work out how much I could borrow' button is visible");
+		else
+			throw new Exception();
 	}
 	
 	public void enter$1InLivingExpense() {
